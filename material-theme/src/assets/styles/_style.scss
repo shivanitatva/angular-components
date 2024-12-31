@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap');
 
 
-$app-primary-color: #1b66e7;
+$app-primary-color: #755cdc;
 $app-secondary-color: #f5f5f8;
 
 $white: #ffffff;
@@ -25,7 +25,14 @@ $primaryFontFamily: "Public Sans", serif;
 
 body {
   margin: 0;
-  font-size: 1.3rem !important;
+  font-size: 1.4rem !important;
   font-weight: 400 !important;
   color: #212121;
+}
+
+
+.form-item-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }

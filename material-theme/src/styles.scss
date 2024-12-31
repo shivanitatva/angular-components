@@ -36,9 +36,10 @@ $materialTheme-theme: mat.m2-define-light-theme(
       warn: $materialTheme-warn,
     ),
     typography: $typography-config,
-    density: 0,
+    density: 0
   )
 );
 @include mat.typography-hierarchy($typography-config);
 @include mat.all-component-themes($materialTheme-theme);
+@include mat.form-field-density(-3);
 /* You can add global styles to this file, and also import other style files */

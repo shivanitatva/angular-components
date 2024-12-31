@@ -1,0 +1,101 @@
+// input number spinner css
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+// Common Label CSS
+mat-label,
+label {
+  margin-bottom: 0.3rem;
+  display: block;
+  text-transform: capitalize;
+  color: #212121;
+  font-size: 1.4rem;
+  &.form-field-label{
+    width: 100%;
+  }
+  &:empty{
+    margin-bottom: 0;
+  }
+}
+.mat-mdc-form-field {
+  position: relative;
+  width: 100% !important;
+  &.mat-form-field-invalid {
+    .mdc-text-field {
+      .mat-mdc-form-field-flex {
+        .mdc-notched-outline {
+          border-color: #bb0606;
+        }
+      }
+    }
+  }
+  &.mat-focused {
+    &:not(.mat-form-field-invalid) {
+      .mat-mdc-form-field-flex {
+        .mdc-notched-outline {
+          border-color: #755cdc;
+        }
+      }
+    }
+  }
+  &.mat-form-field-disabled {    
+    cursor: not-allowed;
+    .mdc-text-field{
+      background-color: #f6f8fa;    
+    }    
+  }
+  .mat-mdc-form-field-subscript-wrapper {
+    display: none;
+  }
+  .mdc-text-field{
+    border-radius: 0.2rem;
+    padding: 0 1.2rem;
+    background-color: #fafcfe;
+    overflow: unset;
+    .mat-mdc-form-field-flex {
+      .mdc-notched-outline {
+        border: 0.2rem solid #d7d7d7;
+        border-radius: 0.2rem;
+        .mdc-notched-outline__notch,
+        .mdc-notched-outline__leading,
+        .mdc-notched-outline__trailing {
+          border-radius: calc(var(--mdc-outlined-text-field-container-shape) - 2px);
+          border: none;
+        }
+      }
+      .mat-mdc-form-field-infix {
+        input,
+        textarea {
+          color: #212121;
+        }
+        input {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          color: #212121;
+        }
+      }
+    }
+  }
+  &.mat-form-field-appearance-outline {
+    // .mdc-text-field {
+    //   .mat-mdc-form-field-flex {
+    //     .mat-mdc-form-field-infix {
+    //       padding-top: calc(var(--mat-form-field-container-vertical-padding) - 1px);
+    //       padding-bottom: calc(var(--mat-form-field-container-vertical-padding) + 1px);
+    //     }
+    //   }
+    // }
+  }
+}
+
+
+
+.form-item-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
