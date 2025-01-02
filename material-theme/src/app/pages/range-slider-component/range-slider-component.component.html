@@ -1,0 +1,31 @@
+<h2 class="m-20">Material Snackbar</h2>
+<mat-card appearance="outlined" class="basic-card m-20">
+    <mat-card-content>
+        <div class="single-type-block">
+            <div class="component-wrapper">
+                <form class="component-item-form">
+                    <div class="form-item-wrapper">
+                        <div class="form-item full-width">
+                            <p class="form-field-label">Basic Range Slider</p>
+                            <div class="d-flex">
+                                <mat-slider min="0" max="50" step="2">
+                                    <input matSliderThumb #basicSlider>
+                                </mat-slider>
+                                <label class="example-value-label">{{basicSlider.value}}</label>
+                            </div>
+                        </div>
+                        <div class="form-item full-width">
+                            <p class="form-field-label">Basic Range Slider</p>
+                            <div class="d-flex">
+                                <mat-slider min="0" max="50" step="2" showTickMarks>
+                                    <input matSliderThumb #descreateSlider>
+                                </mat-slider>
+                                <label class="example-value-label">{{descreateSlider.value}}</label>
+                            </div>
+                        </div>
+                    </div>
+                  </form> 
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

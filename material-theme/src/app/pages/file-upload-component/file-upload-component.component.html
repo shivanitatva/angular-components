@@ -1,0 +1,110 @@
+<h2 class="m-20">File Upload using Browse file and Drag n Drop</h2>
+<mat-card appearance="outlined" class="basic-card m-20">
+    <mat-card-content>
+        <div class="single-type-block">
+            <div class="component-wrapper">
+                <form class="component-item-form">
+                    <div class="form-item-wrapper">
+                        <div class="form-item browse-file-outer">
+                           <div class="file-uploader single-file">
+                                <div class="file-upload-container">
+                                    <label for="" class="form-field-label">Single File Upload</label>
+                                    <div class="file-upload-wrapper">
+                                        <div class="file-upload-area">
+                                            <input type="file">
+                                            <button mat-stroked-button class="file-upload-btn">Browse File</button>
+                                        </div>
+                                        <p class="file-uploaded-text">No files chosen</p>
+                                        <!-- <p class="file-uploaded-text">
+                                            <span class="file-name">test-file1 Lorem ipsum dolor sit, amet consectetur adipisicing elit.txt</span>
+                                            <a href="#" class="remove-icon"></a>
+                                        </p> -->
+                                    </div>
+                                </div>
+                                <p class="file-info">Only .txt, .jpeg, .png files type is allowed.</p>
+                           </div>
+                        </div>
+                        <div class="form-item browse-file-outer">
+                            <div class="file-uploader multiple-file">
+                                 <div class="file-upload-container">
+                                     <label for="" class="form-field-label">Multiple File Upload</label>
+                                     <div class="file-upload-wrapper">
+                                         <div class="file-upload-area">
+                                             <input type="file" multiple>
+                                             <div class="common-btn-wrapper">
+                                                 <button mat-stroked-button class="file-upload-btn">Browse File</button>
+                                             </div>
+                                         </div>
+                                         <span class="file-uploaded-text"> 2 files uploaded</span>
+                                     </div>
+                                     <div class="file-list-wrapper">
+                                        <div class="file-list-item">
+                                            <div class="left-block">
+                                                <em class="icon-txt"></em>
+                                                <span class="file-name">test-file1.txt</span>
+                                            </div>
+                                            <div class="right-block">
+                                                <a href="#" class="remove-icon"></a>
+                                            </div>
+                                        </div>
+                                        <div class="file-list-item">
+                                            <div class="left-block">
+                                                <em class="icon-txt"></em>
+                                                <span class="file-name">test-file2.txt</span>
+                                            </div>
+                                            <div class="right-block">
+                                                <a href="#" class="remove-icon"></a>
+                                            </div>
+                                        </div>
+                                     </div>
+                                 </div>
+                                 <p class="file-info">Only .txt, .jpeg, .png files type is allowed.</p>
+                            </div>
+                        </div>
+                        <div class="form-item browse-file-outer">
+                            <div class="file-uploader">
+                                <div class="file-upload-container">
+                                    <label for="" class="form-field-label">Drag & drop file upload</label>
+                                    <div class="file-upload-container drop-zone-container">
+                                        <div class="drop-zone">
+                                            <input type="file" multiple>
+                                            <div class="drop-file">
+                                                <em class="upload-icon">
+                                                    <img src="images/upload-icon.svg" alt="Upload Icon">
+                                                </em>
+                                                <p>Drag and drop file here</p><span>or</span><span class="browse-text">Browse</span></div>
+                                        </div>
+                                        <span class="file-uploaded-text"> 2 files uploaded</span>
+                                    </div>
+                                    <div class="file-list-wrapper">
+                                       <div class="file-list-item">
+                                           <div class="left-block">
+                                               <em class="icon-txt"></em>
+                                               <span class="file-name">test-file1.txt</span>
+                                           </div>
+                                           <div class="right-block">
+                                               <a href="#" class="remove-icon"></a>
+                                           </div>
+                                       </div>
+                                       <div class="file-list-item">
+                                           <div class="left-block">
+                                               <em class="icon-txt"></em>
+                                               <span class="file-name">test-file2.txt</span>
+                                           </div>
+                                           <div class="right-block">
+                                               <a href="#" class="remove-icon"></a>
+                                           </div>
+                                       </div>
+                                    </div>
+                                </div>
+                                <p class="file-info">Only .txt, .jpeg, .png files type is allowed.</p>
+                            </div>
+                         </div>
+                    </div>
+                  </form>
+                  
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+
