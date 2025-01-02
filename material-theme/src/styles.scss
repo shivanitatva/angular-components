@@ -7,7 +7,6 @@
 
 @include mat.core();
 
-
 $materialTheme-primary: mat.m2-define-palette(
   $primary-palette,
   main,
@@ -21,8 +20,10 @@ $materialTheme-accent: mat.m2-define-palette(
   main
 );
 $materialTheme-warn: mat.m2-define-palette(mat.$m2-red-palette);
-$body-1: mat.m2-define-typography-level(13px, 24px, 400);
-$button: mat.m2-define-typography-level(13px, 1, 400);
+
+$body-1: mat.m2-define-typography-level(14px, 24px, 400);
+
+$button: mat.m2-define-typography-level(14px, 1, 400);
 $typography-config : mat.m2-define-typography-config(
   $font-family: $primaryFontFamily,
   $body-1: $body-1,  
@@ -41,5 +42,9 @@ $materialTheme-theme: mat.m2-define-light-theme(
 );
 @include mat.typography-hierarchy($typography-config);
 @include mat.all-component-themes($materialTheme-theme);
+
+
 @include mat.form-field-density(-3);
-/* You can add global styles to this file, and also import other style files */
+@include mat.button-density(-2);
+@include mat.slide-toggle-density(2);
+@include mat.table-density(-5);

@@ -1,0 +1,24 @@
+<h3>Single selection without search</h3>
+<div>
+  <mat-form-field>
+    <mat-label>Choose an option</mat-label>
+    <mat-select [disabled]="disableSelect.value">
+      <mat-option value="option1">Option 1</mat-option>
+      <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
+      <mat-option value="option3">Option 3</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+
+<h3>Single selection with search</h3>
+<div>
+  <mat-form-field>
+    <mat-select [(value)]="selectedFruit">
+        <mat-option><ngx-mat-select-search [formControl]="searchControl" placeholderLabel="Search fruits"></ngx-mat-select-search></mat-option>
+        <mat-option *ngFor="let fruit of filteredFruits" [value]="fruit">
+          {{ fruit }}
+        </mat-option>
+      </mat-select>
+  </mat-form-field>
+</div>
