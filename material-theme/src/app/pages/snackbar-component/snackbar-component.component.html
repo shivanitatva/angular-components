@@ -1,0 +1,54 @@
+<h2 class="m-20">Material Snackbar</h2>
+<mat-card appearance="outlined" class="basic-card m-20">
+    <mat-card-content>
+        <div class="single-type-block">
+            <div class="component-wrapper">
+                <form class="component-item-form">
+                    <div class="form-item-wrapper">
+                        <div class="form-item">
+                            <p class="form-field-label">Basic Snackbar with only message</p>
+                            <button class="primary-btn" type="button" mat-flat-button (click)="openSnackBar('Hi! I am containing only message.')">Show Snackbar</button>
+                        </div>
+                        <div class="form-item">
+                            <p class="form-field-label">Basic Snackbar with message and action</p>
+                            <button class="primary-btn" type="button" mat-flat-button (click)="openSnackBar('Hi! I am containing only message.', 'close')">Show Snackbar</button>
+                        </div>
+                        <div class="form-item full-width">
+                            <p class="form-field-label">Basic Snackbar position selection</p>
+                            <div class="d-flex">
+                                <div class="half-width-col">
+                                    <mat-label>Horizontal position</mat-label>
+                                    <mat-form-field appearance="outline">
+                                        <mat-select [(value)]="horizontalPosition">
+                                          <mat-option value="start">Start</mat-option>
+                                          <mat-option value="center">Center</mat-option>
+                                          <mat-option value="end">End</mat-option>
+                                          <mat-option value="left">Left</mat-option>
+                                          <mat-option value="right">Right</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="half-width-col">
+                                    <mat-label>Vertical position</mat-label>
+                                    <mat-form-field appearance="outline">
+                                        <mat-select [(value)]="verticalPosition">
+                                          <mat-option value="top">Top</mat-option>
+                                          <mat-option value="bottom">Bottom</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div> 
+                            <button class="primary-btn" type="button" mat-flat-button (click)="openPositionSnackBar()">Show Snackbar</button>
+                              
+                        </div>
+                        <div class="form-item full-width">
+                            <p class="form-field-label">Snackbar with a custom component</p>
+                            <button class="primary-btn" type="button" mat-flat-button (click)="openCustomSnackBar()">Show Snackbar</button>
+                        </div>
+                    </div>
+                  </form> 
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+

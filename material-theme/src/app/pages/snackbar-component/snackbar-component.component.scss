@@ -1,0 +1,23 @@
+// toast message
+.toast-message {
+    &.mat-mdc-snack-bar-container {
+      .mdc-snackbar__surface {
+        padding: 0;
+        .mat-mdc-snack-bar-label {
+          .custom-snackbar-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            .snackbar-content {
+              display: flex;
+              align-items: center;
+              gap: 1rem;
+            }
+            p {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }

@@ -1,3 +1,66 @@
+// Basic Grid 
+.form-item-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1.5rem -3rem;
+  .form-item {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 1.5rem 3rem;
+    &.full-width {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    @include bp(sm-max) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+}
+.d-flex {
+  display: flex;
+  margin: 0 -0.8rem;
+  .half-width-col {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 0.8rem 1.2rem;
+  }
+}
+
+app-range-slider-component,
+app-snackbar-component,
+app-file-upload-component {
+  .mat-mdc-card-content {
+    padding: 2rem 2rem 3rem !important;
+  }
+}
+
+.primary-btn {
+  &.mat-mdc-unelevated-button {
+    &:not(:disabled) {
+      outline: none;
+      background-color: $app-primary-color;
+      color: $white;
+      border-radius: .2rem;
+      border: .15rem solid $app-primary-color;
+      transition: all .5s;
+      padding: 0 1.2rem;
+      white-space: nowrap;
+      .mdc-button__label{
+        color: $white;
+      }
+      .mat-mdc-button-touch-target {
+        height: 100%;
+        width: 100%;
+      }
+      &:hover {
+        background-color: $primary-btn-hover;
+      }
+    }
+  }
+}
+
+
 // input number spinner css
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -23,49 +86,9 @@ label {
 .mat-mdc-form-field {
   position: relative;
   width: 100% !important;
-  &.mat-form-field-invalid {
-    .mdc-text-field {
-      .mat-mdc-form-field-flex {
-        .mdc-notched-outline {
-          border-color: #bb0606;
-        }
-      }
-    }
-  }
-  &.mat-focused {
-    &:not(.mat-form-field-invalid) {
-      .mat-mdc-form-field-flex {
-        .mdc-notched-outline {
-          border-color: #755cdc;
-        }
-      }
-    }
-  }
-  &.mat-form-field-disabled {    
-    cursor: not-allowed;
-    .mdc-text-field{
-      background-color: #f6f8fa;    
-    }    
-  }
-  .mat-mdc-form-field-subscript-wrapper {
-    display: none;
-  }
   .mdc-text-field{
-    border-radius: 0.2rem;
-    padding: 0 1.2rem;
-    background-color: #fafcfe;
     overflow: unset;
     .mat-mdc-form-field-flex {
-      .mdc-notched-outline {
-        border: 0.2rem solid #d7d7d7;
-        border-radius: 0.2rem;
-        .mdc-notched-outline__notch,
-        .mdc-notched-outline__leading,
-        .mdc-notched-outline__trailing {
-          border-radius: calc(var(--mdc-outlined-text-field-container-shape) - 2px);
-          border: none;
-        }
-      }
       .mat-mdc-form-field-infix {
         input,
         textarea {
@@ -80,22 +103,4 @@ label {
       }
     }
   }
-  &.mat-form-field-appearance-outline {
-    // .mdc-text-field {
-    //   .mat-mdc-form-field-flex {
-    //     .mat-mdc-form-field-infix {
-    //       padding-top: calc(var(--mat-form-field-container-vertical-padding) - 1px);
-    //       padding-bottom: calc(var(--mat-form-field-container-vertical-padding) + 1px);
-    //     }
-    //   }
-    // }
-  }
-}
-
-
-
-.form-item-wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
 }

@@ -1,0 +1,188 @@
+
+@import '../../../assets/styles/main.scss';
+.browse-file-outer {
+    .file-uploader {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      .file-uploaded-text{
+        color: $black;
+        padding: 0;
+        margin-bottom: 0;
+        display: inline-flex;
+        gap: 0.8rem;
+        max-width: calc(100% - 12rem);
+        .file-name {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+      .file-upload-container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;  
+        width: 100%;    
+        span{
+          color: $black;
+          &.invalid-file {
+            color: $red;
+          }
+        }
+        .file-upload-wrapper {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          .file-upload-area {
+            position: relative;
+            margin-right: 1rem;
+            display: inline-block;
+            input {
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              opacity: 0;
+              font-size: 0;
+              min-width: 0;
+              cursor: pointer;
+            }
+            .file-upload-btn {
+              outline: none;
+              color: $app-primary-color;
+              background-color: transparent;
+              border-radius: .2rem;
+              border: .15rem solid $app-primary-color;
+              transition: all .5s;
+              padding: 0 1.2rem;
+              pointer-events: none;
+              z-index: 0;
+              white-space: nowrap;
+              .mdc-button__label{
+                color: $app-primary-color;
+              }
+              .mat-mdc-button-touch-target {
+                height: 100%;
+                width: 100%;
+              }
+              &:hover {
+                background-color: $primary-outline-btn-hover;
+              }
+            }
+          }
+        }
+        &.drop-zone-container {
+          position: relative;
+          width: 100%;
+          input {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 2;
+            cursor: pointer;
+            opacity: 0;
+            display: block !important;
+          }
+          .file-uploaded-text{
+            margin-top: 0.5rem;
+          }
+        }
+        .drop-zone {
+          position: relative;
+          width: 100%;
+          border: 0.2rem dashed #dcdfe4;
+          border-radius: 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 1.5rem 1rem;
+  
+          .drop-file {
+            text-align: center;
+            p {
+              margin-bottom: 0;
+              color: $black;
+            }
+            span{
+              color: $black;
+            }
+            .browse-text {
+              color: $app-primary-color;
+              display: inline-block;
+              margin-left: 5px;
+            }
+            .mat-primary {
+              border: none;
+              height: auto;
+              margin: 0;
+              padding: 0 0 0 0.5rem;
+              position: relative;
+              top: -1px;
+            }
+          }
+        }
+      }
+      .remove-icon {
+        display: block;
+        background-image: url("../../../assets/images/delete-icon.svg");
+        height: 1.6rem;
+        width: 1.6rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 1.6rem;
+        cursor: pointer;
+        filter: brightness(46.4%);
+      }
+      .file-info{
+        margin-bottom: 0;
+        max-width: 100%;
+        flex:0 0 100%;
+        color: #9e9e9e;
+        line-height: 1.3;
+        margin-top: 0.5rem;
+        font-size: 1.2rem;
+      }
+      .file-list-wrapper {
+        &:not(:empty){
+          border: 0.2rem solid #dcdfe4;
+          padding: 1rem;
+          border-radius: 0.2rem;
+          margin-top: 1.5rem;
+        }
+        width: 100%;
+        .file-list-item {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          &+.file-list-item {
+            margin-top: 1.5rem;
+          }
+          .left-block {
+            display: flex;
+            em{
+              display: block;
+              position: relative;
+              height: 2rem;
+              width: 2rem;
+              background-repeat: no-repeat;
+              background-position: center;
+              filter: brightness(46.4%);
+              &.icon-txt {
+                background-image: url("../../../assets/images/file-txt-icon.svg");
+              }
+            }
+            .file-name{
+              padding-left: 1rem;
+              cursor: pointer;
+              transition: all 0.3s;
+              color: $black;
+              &:hover{
+                color: $app-primary-color;
+              }
+            }
+          }
+        }
+      }
+    }
+}  
