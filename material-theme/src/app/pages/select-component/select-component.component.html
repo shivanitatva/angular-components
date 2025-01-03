@@ -8,7 +8,7 @@
             <div class="form-item">
               <mat-label>Single selection without search using angular material</mat-label>
               <mat-form-field>
-                <mat-select [disabled]="disableSelect.value" name="select1">
+                <mat-select [disabled]="disableSelect.value" name="select1" placeholder="select item">
                   <mat-option value="option1" name="option1">Option 1</mat-option>
                   <mat-option value="option2" disabled name="option2">Option 2 (disabled)</mat-option>
                   <mat-option value="option3" name="option3">Option 3</mat-option>
@@ -18,7 +18,7 @@
             <div class="form-item">
               <mat-label>Single selection with search using 3rd pary library</mat-label>
               <mat-form-field>
-                <mat-select [(value)]="selectedFruit" name="select2">
+                <mat-select [(value)]="selectedFruit" name="select2" placeholder="select item">
                   <mat-option><ngx-mat-select-search [formControl]="searchControl"
                       placeholderLabel="Search fruits"></ngx-mat-select-search></mat-option>
                   <mat-option *ngFor="let fruit of filteredFruits" [value]="fruit" name="fruit">
@@ -29,9 +29,9 @@
             </div>
             <div class="form-item">
               <mat-label>Multiple selection without search using angular material</mat-label>
-              <mat-form-field>
+              <mat-form-field  [ngClass]="{'hide-placeholder': selectedItemsWithoutSearch.length > 0}">
                 <mat-label>Toppings</mat-label>
-                <mat-select [formControl]="toppings" multiple name="select3">
+                <mat-select [formControl]="toppings" multiple name="select3" [(ngModel)]="selectedItemsWithoutSearch">
                   @for (topping of toppingList; track topping) {
                   <mat-option [value]="topping" name="topping">{{topping}}</mat-option>
                   }
@@ -41,7 +41,7 @@
             <div class="form-item">
               <mat-label>Multiple select without search number of selection using angular material</mat-label>
               <mat-form-field>                
-                <mat-select [formControl]="toppings" multiple name="select4">
+                <mat-select [formControl]="toppings" multiple name="select4" placeholder="select item">
                   <mat-select-trigger>
                     {{toppings.value?.[0] || ''}}
                     @if ((toppings.value?.length || 0) > 1) {
@@ -60,7 +60,7 @@
             <div class="form-item">
               <mat-label>Multiple selection without search using 3rd party library</mat-label>
               <mat-form-field>    
-                <mat-select [(ngModel)]="selectedItemsWithoutSearch" multiple name="select5">
+                <mat-select [(ngModel)]="selectedItemsWithoutSearch" multiple name="select5" placeholder="select item">
                   <mat-option *ngFor="let item of itemsWithoutSearch" [value]="item" name="item">
                     {{ item }}
                   </mat-option>
@@ -70,7 +70,7 @@
             <div class="form-item">
               <mat-label>Multiple selection with search using 3rd party library</mat-label>
               <mat-form-field>
-                <mat-select [(ngModel)]="selectedItems" multiple name="select6">                   
+                <mat-select [(ngModel)]="selectedItems" multiple name="select6" placeholder="select item">                   
                   <mat-option>
                     <ngx-mat-select-search 
                       [formControl]="searchControlMultiple"

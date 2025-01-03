@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { NgClass, NgFor } from '@angular/common';
 import { FormControl } from '@angular/forms';
 // Angular Material modules
 import {MatCardModule} from '@angular/material/card';
@@ -22,6 +22,7 @@ import { debounceTime } from 'rxjs';
     ReactiveFormsModule, 
     NgxMatSelectSearchModule,
     NgFor,
+    NgClass,
     MatCardModule,
     MatCheckboxModule
   ],

@@ -13,6 +13,17 @@
           display: none;
         }
       }
+      .mat-mdc-floating-label {
+        &.mdc-floating-label {
+          display: inline-block;
+          margin: 0;
+          transform: translateY(-50%) scale(1);
+          mat-label {
+            color: rgba(0, 0, 0, 0.6);
+            margin: 0;
+          }
+        }
+      }
       &.mdc-text-field--focused {
         border-color: $app-primary-color;
       }
@@ -39,6 +50,14 @@
           }
         }
       }
+    }
+    &.hide-placeholder {
+      .mat-mdc-floating-label {
+        display: none !important;
+      }
+    }
+    .mat-mdc-select-arrow-wrapper  {
+      transform: none;
     }
   }
 }
