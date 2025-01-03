@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgClass, NgFor } from '@angular/common';
+import { NgFor, NgIf, NgClass } from '@angular/common';
 import { FormControl } from '@angular/forms';
 // Angular Material modules
 import {MatCardModule} from '@angular/material/card';
@@ -8,6 +8,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatChipsModule } from '@angular/material/chips';  // Import MatChipsModule
+import {MatIconModule} from '@angular/material/icon';
 // Ngx Mat Select Search module
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 import { debounceTime } from 'rxjs';
@@ -22,16 +24,27 @@ import { debounceTime } from 'rxjs';
     ReactiveFormsModule, 
     NgxMatSelectSearchModule,
     NgFor,
+    NgIf,
     NgClass,
     MatCardModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatChipsModule, 
+    MatIconModule
   ],
   templateUrl: './select-component.component.html',
   styleUrl: './select-component.component.scss',
   standalone: true
 })
 export class SelectComponentComponent implements OnInit{
+
+  // For disable option from select
   disableSelect = new FormControl(false);
+
+  // multiple select without search
+  toppings = new FormControl('');
+  toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
+
+  // single select with search
   
   searchControl = new FormControl();
   selectedFruit: string | undefined;
@@ -48,13 +61,14 @@ export class SelectComponentComponent implements OnInit{
   ];
 
   filteredFruits: string[] = [...this.fruits];
+  searchPlaceholderLabelSelect: string = "Search fruits" ;
 
-  toppings = new FormControl('');
-  toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
+
 
   selectedItemsWithoutSearch: string[] = []; // Store selected items
   itemsWithoutSearch: string[] = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
 
+  // Multiple select with search
   selectedItems: string[] = []; // Array to store selected items
   items: string[] = [
     'Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6', 'Item 7'
@@ -63,17 +77,15 @@ export class SelectComponentComponent implements OnInit{
   filteredItems: string[] = [...this.items]; // Initially, set filtered items to all items
   searchControlMultiple = new FormControl(''); // Control for search input
 
+  // Whether to show the "Select All" checkbox
+  showToggleAllCheckbox: boolean = true;
+  
    // Property to hold the placeholder text for the search field
    searchPlaceholderLabel: string = 'Search for items...';
    searchNoEntriesFoundLabel: string = 'No record found';
-
    
    // Whether the "Select All" checkbox is indeterminate
    isIndeterminate: boolean = false;
-
-   // Whether to show the "Select All" checkbox
-  showToggleAllCheckbox: boolean = true;
-  
 
   constructor() {
     this.searchControl.valueChanges.pipe(debounceTime(300)).subscribe(searchText => {
@@ -148,5 +160,14 @@ export class SelectComponentComponent implements OnInit{
     console.log(index);    
     this.updateIndeterminateState();
   }
- 
+
+  // Function to remove an item from selectedItems when the chip is removed
+  removeItem(item: string): void {
+    const index = this.selectedItems.indexOf(item);
+    if (index > -1) {
+      this.selectedItems.splice(index, 1); // Remove the item      
+    }
+    this.updateIndeterminateState();
+  }
+  
 }

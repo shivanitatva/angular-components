@@ -238,8 +238,68 @@ div {
     }
   }
 }
-
 /* mat-mdc-form-field-focus-overlay -- opacity add kare chhe jena lidhe focus ma color alag dekhay chhe*/
 // .mdc-text-field--filled .mdc-line-ripple::after -- ripple nu after bane chhe jema thi aa css aave chhe
 // 2nd select option ma j upar searchbar chhe a mate "contains-mat-select-search" aa option ne pakdine css kari shakiye
 //
+// autocomplete and multi select dropdown's chip css
+.mat-mdc-form-field {
+  .mdc-evolution-chip-set {
+    width: 100% !important;
+    &.mat-mdc-chip-grid {
+      .mdc-evolution-chip-set__chips {
+        margin-left: 0;
+        .mat-mdc-chip-input {
+          margin-left: 0;
+        }
+      }
+    }
+    .mdc-evolution-chip-set__chips {
+      margin-left: -0rem;
+      flex-wrap: nowrap;
+      .mdc-evolution-chip {
+        margin: 0.2rem 0.3rem 0 0;
+        height: auto;
+        line-height: normal;
+        // padding: 0.1rem 0.1rem 0.1rem 0.3rem;
+        padding: 0.2rem 0.3rem 0.2rem 1.2rem;
+        cursor: default;     
+        .mdc-evolution-chip__cell--primary {
+          .mdc-evolution-chip__action {
+            padding: 0 0.4rem 0 0;
+            &:before {
+              display: none;
+            }
+            .mdc-evolution-chip__text-label {                            
+              font-size: 1.3rem;
+              position: relative;
+              overflow: hidden;
+              text-decoration: none;
+              .drop-options{
+                .drop-options-color-box{
+                  margin-right: 0.5rem;
+                  width: 1.4rem !important;
+                  height: 1.4rem !important;
+                  min-width: 1.4rem;
+                }
+                .drop-options-image{
+                  margin-right: 0.5rem;
+                }
+              }
+            }
+          }
+        }
+
+        .mat-mdc-chip-focus-overlay {
+          display: none;
+        }
+        .mat-ripple.mat-mdc-chip-ripple {
+          display: none;
+        }
+      }
+      .mat-mdc-chip {
+        overflow: hidden;
+      }
+    }
+  }
+}
