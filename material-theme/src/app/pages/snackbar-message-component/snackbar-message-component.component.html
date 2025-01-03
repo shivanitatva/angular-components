@@ -1,11 +1,10 @@
 <div class="custom-snackbar-wrapper">
     <div class="snackbar-content" matSnackBarLabel>
-        <em class="icon">
-            <img src="images/upload-icon.svg" alt="Upload Icon">
-        </em>
         <p>Lorem ipsum dolor sit amet consectetur.</p>
     </div>
     <div class="snackbar-actions" matSnackBarActions>
-        <button mat-icon-button matSnackBarAction (click)="snackBarRef.dismissWithAction()">🍕</button>
+        <button mat-icon-button matSnackBarAction (click)="snackBarRef.dismissWithAction()">
+            <img src="images/close-icon-gray.svg" alt="close">
+        </button>
     </div>
 </div>

@@ -1,0 +1,123 @@
+// toast message
+.toast-message {
+  &.mat-mdc-snack-bar-container {
+    max-width: 40.5rem;
+    margin: 1.5rem !important;
+    .mdc-snackbar__surface {
+      padding: 0;
+      border-radius: 5px;
+      background: #f5f5f3 !important;
+      box-shadow: 0 1px 2px -1px rgba(0, 20, 62, 0.16), 0 1px 3px rgba(0, 20, 62, 0.16) !important;
+      .mat-mdc-snack-bar-label {
+        .custom-snackbar-wrapper {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          padding: 1.2rem 1rem 1.3rem 4rem;
+          position: relative;
+          &:before {
+            position: absolute;
+            content: "";
+            height: 1.5rem;
+            width: 1.5rem;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 1.5rem;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-49%);
+          }
+          .snackbar-content {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0;
+            p {
+              margin-bottom: 0;
+              color: #212121;
+              line-height: 1.2;
+            }
+          }
+          .mat-mdc-snack-bar-actions {
+            button {
+              &.mat-mdc-snack-bar-action {
+                border: 0;
+                outline: 0;
+                background: transparent;
+                filter: brightness(0.65);
+              }
+            }
+          }
+        }
+      }
+    }
+    &.success-toast {
+      .mdc-snackbar__surface {
+        background: #d7ffd7 !important;
+        .mat-mdc-snack-bar-label {
+          .custom-snackbar-wrapper {
+            &:before {
+              background-image: url('../images/success-ic.svg');
+            }
+            .snackbar-content {
+              p {
+                color: #0c5718;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.info-toast {
+      .mdc-snackbar__surface {
+        background: #d1edff !important;
+        .mat-mdc-snack-bar-label {
+          .custom-snackbar-wrapper {
+            &:before {
+              background-image: url('../images/info-ic.svg');
+            }
+            .snackbar-content {
+              p {
+                color: #1b66e7;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.warning-toast {
+      .mdc-snackbar__surface {
+        background: #fff1db !important;
+        .mat-mdc-snack-bar-label {
+          .custom-snackbar-wrapper {
+            &:before {
+              background-image: url('../images/warning-ic.svg');
+            }
+            .snackbar-content {
+              p {
+                color: #d88c14;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.error-toast {
+      .mdc-snackbar__surface {
+        background: #ffe4dc !important;
+        .mat-mdc-snack-bar-label {
+          .custom-snackbar-wrapper {
+            &:before {
+              background-image: url('../images/error-ic.svg');
+            }
+            .snackbar-content {
+              p {
+                color: #f80808;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

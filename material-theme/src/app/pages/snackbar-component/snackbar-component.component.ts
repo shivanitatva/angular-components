@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
-import {MatSnackBar,  MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition,} from '@angular/material/snack-bar';
+import {MatSnackBar,  MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { SnackbarMessageComponentComponent } from '../snackbar-message-component/snackbar-message-component.component';
@@ -19,8 +19,9 @@ export class SnackbarComponentComponent {
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
 
   openSnackBar(message: string, action?: string) {
-    this._snackBar.open(message, action , { duration: 5000 });
+    this._snackBar.open(message, action, { duration: 5000 });
   }
+
   openPositionSnackBar() {
     this._snackBar.open('Snackbar Position example', 'close' , { 
       duration: 6000,
@@ -34,6 +35,38 @@ export class SnackbarComponentComponent {
       horizontalPosition: 'left',
       verticalPosition: 'top',
       panelClass: 'toast-message'
+    });
+  }
+  openSuccessSnackBar() {
+    this._snackBar.openFromComponent(SnackbarMessageComponentComponent, {
+      duration: 50000,
+      horizontalPosition: 'right',
+      verticalPosition: 'bottom',
+      panelClass: ['toast-message', 'success-toast']
+    });
+  }
+  openInfoSnackBar() {
+    this._snackBar.openFromComponent(SnackbarMessageComponentComponent, {
+      duration: 50000,
+      horizontalPosition: 'right',
+      verticalPosition: 'bottom',
+      panelClass: ['toast-message', 'info-toast']
+    });
+  }
+  openWarningSnackBar() {
+    this._snackBar.openFromComponent(SnackbarMessageComponentComponent, {
+      duration: 50000,
+      horizontalPosition: 'right',
+      verticalPosition: 'bottom',
+      panelClass: ['toast-message', 'warning-toast']
+    });
+  }
+  openErrorSnackBar() {
+    this._snackBar.openFromComponent(SnackbarMessageComponentComponent, {
+      duration: 50000,
+      horizontalPosition: 'right',
+      verticalPosition: 'bottom',
+      panelClass: ['toast-message', 'error-toast']
     });
   }
 }

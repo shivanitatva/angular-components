@@ -1,4 +1,4 @@
-<h2 class="m-20">Material Snackbar</h2>
+<h2 class="m-20">Material Slider</h2>
 <mat-card appearance="outlined" class="basic-card m-20">
     <mat-card-content>
         <div class="single-type-block">
@@ -8,23 +8,33 @@
                         <div class="form-item full-width">
                             <p class="form-field-label">Basic Range Slider</p>
                             <div class="d-flex">
-                                <mat-slider min="0" max="50" step="2">
+                                <mat-slider min="0" max="50" step="5">
                                     <input matSliderThumb #basicSlider>
                                 </mat-slider>
                                 <label class="example-value-label">{{basicSlider.value}}</label>
                             </div>
                         </div>
                         <div class="form-item full-width">
-                            <p class="form-field-label">Basic Range Slider</p>
+                            <p class="form-field-label">Basic Range Slider with tickmarks and thumb label</p>
                             <div class="d-flex">
-                                <mat-slider min="0" max="50" step="2" showTickMarks>
+                                <mat-slider min="0" max="50" step="2" showTickMarks discrete>
                                     <input matSliderThumb #descreateSlider>
                                 </mat-slider>
                                 <label class="example-value-label">{{descreateSlider.value}}</label>
                             </div>
                         </div>
+                        <div class="form-item full-width">
+                            <p class="form-field-label">Basic Range Slider</p>
+                            <div class="d-flex">
+                                <mat-slider min="0" max="200" step="2" discrete>
+                                    <input value="70" matSliderStartThumb #startRange>
+                                    <input value="120" matSliderEndThumb #endRange>
+                                </mat-slider>
+                                <label class="example-value-label">Start: {{startRange.value}} &nbsp; End: {{endRange.value}}</label>
+                            </div>
+                        </div>
                     </div>
-                  </form> 
+                </form> 
             </div>
         </div>
     </mat-card-content>

@@ -43,7 +43,13 @@
                         </div>
                         <div class="form-item full-width">
                             <p class="form-field-label">Snackbar with a custom component</p>
-                            <button class="primary-btn" type="button" mat-flat-button (click)="openCustomSnackBar()">Show Snackbar</button>
+                            <div class="btn-list">
+                                <button class="primary-btn" type="button" mat-flat-button (click)="openCustomSnackBar()">Show Snackbar</button>
+                                <button class="primary-btn" type="button" mat-flat-button (click)="openSuccessSnackBar()">Success Snackbar</button>
+                                <button class="primary-btn" type="button" mat-flat-button (click)="openInfoSnackBar()">Info Snackbar</button>
+                                <button class="primary-btn" type="button" mat-flat-button (click)="openWarningSnackBar()">Warning Snackbar</button>
+                                <button class="primary-btn" type="button" mat-flat-button (click)="openErrorSnackBar()">Error Snackbar</button>
+                            </div>
                         </div>
                     </div>
                   </form> 
