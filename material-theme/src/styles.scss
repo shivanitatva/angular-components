@@ -44,7 +44,10 @@ $materialTheme-theme: mat.m2-define-light-theme(
 @include mat.all-component-themes($materialTheme-theme);
 
 
-@include mat.form-field-density(-3);
+@include mat.form-field-density(-4);
 @include mat.button-density(-2);
 @include mat.slide-toggle-density(2);
 @include mat.table-density(-5);
+.my-dense-select {
+  @include mat.form-field-density(-5);  // Adjusts the density of the form field
+}
