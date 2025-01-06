@@ -1,10 +1,41 @@
+<h2 class="m-20">Different selection option</h2>
 <mat-card appearance="outlined" class="basic-card m-20">
   <mat-card-content>
     <div class="single-type-block select-content-wrapper">
-      <h2>Different selection option</h2>
       <div class="component-wrapper">
         <form class="component-item-form">
           <div class="form-item-wrapper">
+
+            <div class="form-item" style="display: none;">
+              <mat-label>Multiple select without search number of selection using angular material</mat-label>
+              <mat-form-field>                
+                <mat-select [formControl]="toppings" multiple name="select4" placeholder="select item">
+                  <mat-select-trigger>
+                    {{toppings.value?.[0] || ''}}
+                    @if ((toppings.value?.length || 0) > 1) {
+                    <span class="example-additional-selection">
+                      (+{{(toppings.value?.length || 0) - 1}} {{toppings.value?.length === 2
+                      ? 'other' : 'others'}})
+                    </span>
+                    }
+                  </mat-select-trigger>
+                  @for (topping of toppingList; track topping) {
+                  <mat-option [value]="topping" name="topping">{{topping}}</mat-option>
+                  }
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="form-item" style="display: none;">
+              <mat-label>Multiple selection without search using 3rd party library</mat-label>
+              <mat-form-field> 
+                <mat-select [(ngModel)]="selectedItemsWithoutSearch" multiple name="select5">
+                  <mat-option *ngFor="let item of itemsWithoutSearch" [value]="item" name="item">
+                    {{ item }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
             <div class="form-item">
               <mat-label>Single selection without search using angular material</mat-label>
               <mat-form-field>
@@ -110,7 +141,7 @@
               </mat-form-field>
             </div>
             <!-- image dropdown -->
-            <div class="form-item full-width">
+            <div class="form-item full-width icon-select">
               <mat-label>Options with image search using 3rd party library</mat-label>
               <mat-form-field>
                 <mat-select multiple [(ngModel)]="selectedCountryItems" name="select8" placeholder="Select country">                           
@@ -121,7 +152,7 @@
                             <mat-chip
                             [removable]="true" 
                             (removed)="removeCountryItem(item)">
-                              <img alt="" class="option-img" [src]="item.flag" height="25" style="height: 25px;">
+                              <img alt="" class="option-img" [src]="item.flag" height="20" style="height: 20px;">
                               <span>{{item.name}}</span>
                               <mat-icon matChipRemove>cancel</mat-icon>
                             </mat-chip>
@@ -154,8 +185,10 @@
                 <mat-select [(ngModel)]="selectedIcon" name="select9" placeholder="Search Icon">
                   <mat-select-trigger>
                     @if(selectedIcon) {
-                      <mat-icon>{{selectedIcon.icon }}</mat-icon> 
-                      <span>{{selectedIcon.name}}</span>               
+                      <div class="icon-inner-wrapper">
+                        <mat-icon>{{selectedIcon.icon }}</mat-icon> 
+                        <span>{{selectedIcon.name}}</span>               
+                      </div>
                     }
                   </mat-select-trigger>
                   <mat-option>
@@ -168,37 +201,6 @@
                   <mat-option *ngFor="let item of filteredIconItems" [value]="item" name="icon">
                     <mat-icon>{{ item.icon }}</mat-icon> 
                     <span>{{item.name}}</span>
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-
-
-            <div class="form-item" style="display: none;">
-              <mat-label>Multiple select without search number of selection using angular material</mat-label>
-              <mat-form-field>                
-                <mat-select [formControl]="toppings" multiple name="select4" placeholder="select item">
-                  <mat-select-trigger>
-                    {{toppings.value?.[0] || ''}}
-                    @if ((toppings.value?.length || 0) > 1) {
-                    <span class="example-additional-selection">
-                      (+{{(toppings.value?.length || 0) - 1}} {{toppings.value?.length === 2
-                      ? 'other' : 'others'}})
-                    </span>
-                    }
-                  </mat-select-trigger>
-                  @for (topping of toppingList; track topping) {
-                  <mat-option [value]="topping" name="topping">{{topping}}</mat-option>
-                  }
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="form-item" style="display: none;">
-              <mat-label>Multiple selection without search using 3rd party library</mat-label>
-              <mat-form-field> 
-                <mat-select [(ngModel)]="selectedItemsWithoutSearch" multiple name="select5">
-                  <mat-option *ngFor="let item of itemsWithoutSearch" [value]="item" name="item">
-                    {{ item }}
                   </mat-option>
                 </mat-select>
               </mat-form-field>

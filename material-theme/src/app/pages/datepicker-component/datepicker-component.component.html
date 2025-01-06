@@ -9,7 +9,7 @@
                             <mat-label>Choose a date</mat-label>
                             <mat-form-field appearance="outline">
                                 <input matInput [matDatepicker]="basicPicker" (click)="basicPicker.open()" placeholder="Select Date">
-                                <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+                                <mat-hint>MM/DD/YYYY</mat-hint>
                                 <mat-datepicker-toggle matIconSuffix [for]="basicPicker"></mat-datepicker-toggle>
                                 <mat-datepicker #basicPicker></mat-datepicker>
                             </mat-form-field>                              
@@ -19,7 +19,7 @@
                             <mat-form-field appearance="outline" (click)="dateRangePicker.open()">
                                 <mat-date-range-input [rangePicker]="dateRangePicker">
                                   <input matStartDate placeholder="Start date">
-                                  <input matEndDate placeholder="End date">
+                                  <input matEndDate placeholder="End date test">
                                 </mat-date-range-input>
                                 <!-- <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint> -->
                                 <mat-datepicker-toggle matIconSuffix [for]="dateRangePicker"></mat-datepicker-toggle>
@@ -34,7 +34,7 @@
                                 <mat-datepicker-toggle matIconSuffix [for]="basicPicker1">
                                     <img matDatepickerToggleIcon src="images/down-arrow-gray.svg" alt="custom icon">
                                 </mat-datepicker-toggle>
-                                <mat-datepicker #basicPicker1 [dateClass]="customDateClass" panelClass  ="custom-datepicker-class">
+                                <mat-datepicker #basicPicker1 [dateClass]="customDateClass" panelClass="custom-datepicker-class">
                                     <mat-datepicker-actions>
                                         <button mat-stroked-button matDatepickerCancel>Cancel</button>
                                         <button class="primary-btn" mat-flat-button matDatepickerApply>Apply</button>

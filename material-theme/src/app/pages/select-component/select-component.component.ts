@@ -263,7 +263,6 @@ export class SelectComponentComponent implements OnInit{
     { name: 'USA  ', flag: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg' },
     { name: 'Turkey', flag: 'https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg' },
     { name: 'Ukraine', flag: 'https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Ukraine.svg' },
-    // Add more countries here
   ];
   allCountryItems = [...this.filteredCountryItems];
 
