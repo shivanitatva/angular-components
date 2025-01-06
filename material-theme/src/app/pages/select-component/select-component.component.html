@@ -71,9 +71,107 @@
               </mat-form-field>
             </div>
 
-            
-
-
+            <!-- color dropdown -->
+            <div class="form-item full-width">
+              <mat-label>Color selection with search using 3rd party library</mat-label>
+              <mat-form-field>
+                <mat-select [(ngModel)]="selectedColorItems" multiple name="select7" placeholder="Select color">                           
+                  <mat-select-trigger>
+                    @if(selectedColorItems){
+                      <mat-chip-set #chipList aria-label="Selected items">                                
+                        @for(item of selectedColorItems; track item){
+                            <mat-chip
+                            [removable]="true" 
+                            (removed)="removeColorItem(item)">
+                              <span class="color-box" [ngStyle]="{'background-color': item.hex}"></span>
+                              {{ item.name }} ({{ item.hex }})
+                              <mat-icon matChipRemove>cancel</mat-icon>
+                            </mat-chip>
+                          }
+                      </mat-chip-set>
+                    }                   
+                  </mat-select-trigger>
+                  <mat-option>
+                    <ngx-mat-select-search 
+                      [formControl]="searchControlColor"
+                      [placeholderLabel]="searchPlaceholderLabel"
+                      [noEntriesFoundLabel]="searchNoEntriesFoundLabel" 
+                      [showToggleAllCheckbox]="true"
+                      [toggleAllCheckboxIndeterminate]="isColorIndeterminate"
+                      (toggleAll)="toggleColorSelectAll($event)">
+                    </ngx-mat-select-search>
+                  </mat-option>
+                  <!-- Options List -->
+                  <mat-option *ngFor="let item of filteredColorItems" [value]="item" (click)="onColorItemToggle(item)">
+                    <span class="color-box" [ngStyle]="{'background-color': item.hex}"></span>
+                    {{ item.name }} ({{ item.hex }})
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <!-- image dropdown -->
+            <div class="form-item full-width">
+              <mat-label>Options with image search using 3rd party library</mat-label>
+              <mat-form-field>
+                <mat-select multiple [(ngModel)]="selectedCountryItems" name="select8" placeholder="Select country">                           
+                  <mat-select-trigger>
+                    @if(selectedCountryItems){
+                      <mat-chip-set #chipList aria-label="Selected items">                                
+                        @for(item of selectedCountryItems; track item){
+                            <mat-chip
+                            [removable]="true" 
+                            (removed)="removeCountryItem(item)">
+                              <img alt="" class="option-img" [src]="item.flag" height="25" style="height: 25px;">
+                              <span>{{item.name}}</span>
+                              <mat-icon matChipRemove>cancel</mat-icon>
+                            </mat-chip>
+                          }
+                      </mat-chip-set>
+                    }                   
+                  </mat-select-trigger>
+                  <mat-option>
+                    <ngx-mat-select-search 
+                      [formControl]="searchControlCountry"
+                      [placeholderLabel]="searchPlaceholderLabel"
+                      [noEntriesFoundLabel]="searchNoEntriesFoundLabel" 
+                      [showToggleAllCheckbox]="true"
+                      [toggleAllCheckboxIndeterminate]="isCountryIndeterminate"
+                      (toggleAll)="toggleCountrySelectAll($event)">
+                    </ngx-mat-select-search>
+                  </mat-option>
+                  <!-- Options List -->
+                  <mat-option *ngFor="let item of filteredCountryItems" [value]="item" (click)="onCountryItemToggle(item)">
+                    <img alt="" class="option-img" [src]="item.flag" height="25" style="height: 25px;">
+                    <span>{{item.name}}</span>
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <!-- icon dropdown -->
+            <div class="form-item full-width">
+              <mat-label>Single selection with search using icon in option</mat-label>
+              <mat-form-field>
+                <mat-select [(ngModel)]="selectedIcon" name="select9" placeholder="Search Icon">
+                  <mat-select-trigger>
+                    @if(selectedIcon) {
+                      <mat-icon>{{selectedIcon.icon }}</mat-icon> 
+                      <span>{{selectedIcon.name}}</span>               
+                    }
+                  </mat-select-trigger>
+                  <mat-option>
+                    <ngx-mat-select-search 
+                      [formControl]="searchIconControl"   
+                      [placeholderLabel]="searchPlaceholderIconSelect"            
+                      [noEntriesFoundLabel]="searchNoEntriesFoundLabel" >
+                    </ngx-mat-select-search>
+                  </mat-option>
+                  <mat-option *ngFor="let item of filteredIconItems" [value]="item" name="icon">
+                    <mat-icon>{{ item.icon }}</mat-icon> 
+                    <span>{{item.name}}</span>
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
 
 
             <div class="form-item" style="display: none;">
