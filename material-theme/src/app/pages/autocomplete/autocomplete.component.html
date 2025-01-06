@@ -1,0 +1,75 @@
+<mat-card appearance="outlined" class="basic-card m-20">
+    <mat-card-content>
+        <div class="single-type-block select-content-wrapper">
+            <h2>Auto complete</h2>
+            <div class="component-wrapper">
+                <form class="component-item-form">
+                    <div class="form-item-wrapper">
+                        <div class="form-item">
+                            <mat-label>AutoComple</mat-label>
+                            <mat-form-field class="example-full-width">
+                                <input type="text"
+                                    placeholder="Pick one"
+                                    aria-label="Number"
+                                    matInput
+                                    [formControl]="myControl"
+                                    [matAutocomplete]="auto">
+                                <mat-autocomplete autoActiveFirstOption
+                                    #auto="matAutocomplete">
+                                    @if(!(filteredOptions.length)){
+                                    <mat-option>
+                                        <span class="label">No match
+                                            found</span>
+                                    </mat-option>
+                                    }
+                                    @for (option of filteredOptions; track
+                                    option) {
+                                    <mat-option
+                                        [value]="option">{{option}}</mat-option>
+                                    }
+                                </mat-autocomplete>
+                            </mat-form-field>
+                        </div>
+                        <div class="form-item">
+                            <mat-label>AutoComple with selection</mat-label>
+                            <mat-form-field class="example-full-width">
+                                <mat-chip-set #chipList
+                                    aria-label="Selected fruits">
+                                    @for(fruit of selectedFruits; track fruit){
+                                    <mat-chip [removable]="true"
+                                        (removed)="remove(fruit)">
+                                        {{fruit}}
+                                        <mat-icon
+                                            matChipRemove>cancel</mat-icon>
+                                    </mat-chip>
+                                    }
+                                    <input placeholder="Select fruit"
+                                        aria-label="Fruit"
+                                        matInput
+                                        [formControl]="autocompleteSelect"
+                                        [matAutocomplete]="autoselect">
+                                </mat-chip-set>
+                                <mat-autocomplete #autoselect="matAutocomplete"
+                                    (optionSelected)="selectFruit($event.option.value)">
+                                    @for(fruit of filteredFruits; track fruit){
+                                    <mat-option [value]="fruit">
+                                        <mat-checkbox
+                                            [checked]="isSelected(fruit)">
+                                            {{fruit}}
+                                        </mat-checkbox>
+                                    </mat-option>
+                                    }
+                                    @if(!filteredFruits.length){
+                                    <mat-option disabled>No match
+                                        found</mat-option>
+                                    }
+                                </mat-autocomplete>
+                            </mat-form-field>
+                          
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
