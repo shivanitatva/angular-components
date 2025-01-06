@@ -1,0 +1,50 @@
+<h2 class="m-20">Material Datepicker</h2>
+<mat-card appearance="outlined" class="basic-card m-20">
+    <mat-card-content>
+        <div class="single-type-block">
+            <div class="component-wrapper">
+                <form class="component-item-form">
+                    <div class="form-item-wrapper">
+                        <div class="form-item datepicker-wrapper">
+                            <mat-label>Choose a date</mat-label>
+                            <mat-form-field appearance="outline">
+                                <input matInput [matDatepicker]="basicPicker" (click)="basicPicker.open()" placeholder="Select Date">
+                                <mat-hint>MM/DD/YYYY</mat-hint>
+                                <mat-datepicker-toggle matIconSuffix [for]="basicPicker"></mat-datepicker-toggle>
+                                <mat-datepicker #basicPicker></mat-datepicker>
+                            </mat-form-field>                              
+                        </div>
+                        <div class="form-item datepicker-wrapper">
+                            <mat-label>Enter a date range</mat-label>
+                            <mat-form-field appearance="outline" (click)="dateRangePicker.open()">
+                                <mat-date-range-input [rangePicker]="dateRangePicker">
+                                  <input matStartDate placeholder="Start date">
+                                  <input matEndDate placeholder="End date test">
+                                </mat-date-range-input>
+                                <!-- <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint> -->
+                                <mat-datepicker-toggle matIconSuffix [for]="dateRangePicker"></mat-datepicker-toggle>
+                                <mat-date-range-picker #dateRangePicker></mat-date-range-picker>
+                            </mat-form-field>
+                              
+                        </div>
+                        <div class="form-item datepicker-wrapper custom-icon">
+                            <mat-label>Datepicker with custom icon, custom date class, custom panel class & action buttons</mat-label>
+                            <mat-form-field appearance="outline">
+                                <input matInput [matDatepicker]="basicPicker1" (click)="basicPicker1.open()" placeholder="Select Date">
+                                <mat-datepicker-toggle matIconSuffix [for]="basicPicker1">
+                                    <img matDatepickerToggleIcon src="images/down-arrow-gray.svg" alt="custom icon">
+                                </mat-datepicker-toggle>
+                                <mat-datepicker #basicPicker1 [dateClass]="customDateClass" panelClass="custom-datepicker-class">
+                                    <mat-datepicker-actions>
+                                        <button mat-stroked-button matDatepickerCancel>Cancel</button>
+                                        <button class="primary-btn" mat-flat-button matDatepickerApply>Apply</button>
+                                    </mat-datepicker-actions>
+                                </mat-datepicker>
+                            </mat-form-field>                              
+                        </div>
+                    </div>
+                </form> 
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

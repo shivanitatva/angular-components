@@ -5,7 +5,7 @@ import { SelectComponentComponent } from './pages/select-component/select-compon
 import { FileUploadComponentComponent } from './pages/file-upload-component/file-upload-component.component';
 import { SnackbarComponentComponent } from './pages/snackbar-component/snackbar-component.component';
 import { RangeSliderComponentComponent } from './pages/range-slider-component/range-slider-component.component';
-import { CalendarComponentComponent } from './pages/calendar-component/calendar-component.component';
+import { DatepickerComponentComponent } from './pages/datepicker-component/datepicker-component.component';
 
 export const routes: Routes = [
     {
@@ -39,9 +39,9 @@ export const routes: Routes = [
         component: RangeSliderComponentComponent
     },
     {
-        path: 'calender-component',
+        path: 'datepicker-component',
         pathMatch: "full",
-        component: CalendarComponentComponent
+        component: DatepickerComponentComponent
     },
     {
         path: '**',
