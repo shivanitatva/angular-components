@@ -6,6 +6,7 @@ import { FileUploadComponentComponent } from './pages/file-upload-component/file
 import { SnackbarComponentComponent } from './pages/snackbar-component/snackbar-component.component';
 import { RangeSliderComponentComponent } from './pages/range-slider-component/range-slider-component.component';
 import { DatepickerComponentComponent } from './pages/datepicker-component/datepicker-component.component';
+import { AutocompleteComponent } from './pages/autocomplete/autocomplete.component';
 
 export const routes: Routes = [
     {
@@ -42,6 +43,11 @@ export const routes: Routes = [
         path: 'datepicker-component',
         pathMatch: "full",
         component: DatepickerComponentComponent
+    },
+    {
+        path: 'autocomplete',
+        pathMatch: "full",
+        component: AutocompleteComponent
     },
     {
         path: '**',
