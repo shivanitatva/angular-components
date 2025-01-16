@@ -1,0 +1,25 @@
+<h2 class="m-20">Multiselect</h2>
+<mat-card appearance="outlined" class="basic-card m-20">
+  <mat-card-content>
+    <div class="single-type-block select-content-wrapper">
+      <div class="component-wrapper">
+        <form class="component-item-form">
+          <div class="form-item-wrapper">          
+            <!-- Multiple select without search -->
+            <div class="form-item">
+              <mat-label>Multiple selection without search using angular material</mat-label>
+              <mat-form-field  [ngClass]="{'hide-placeholder': selectedItemsWithoutSearch.length > 0}">
+                <mat-label>Select Toppings</mat-label>
+                <mat-select [formControl]="toppings" multiple name="select3" [(ngModel)]="selectedItemsWithoutSearch">
+                  @for (topping of toppingList; track topping) {
+                    <mat-option [value]="topping" name="topping">{{topping}}</mat-option>
+                  }
+                </mat-select>
+              </mat-form-field>
+            </div> 
+          </div>
+        </form>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,33 @@
+<h2 class="m-20">Single select with search</h2>
+<mat-card appearance="outlined" class="basic-card m-20">
+  <mat-card-content>
+    <div class="single-type-block select-content-wrapper">
+      <div class="component-wrapper">
+        <form class="component-item-form">
+          <div class="form-item-wrapper">
+           
+            <!-- single select with search -->
+            <div class="form-item">
+              <mat-label>Single selection with search using 3rd pary library</mat-label>
+              <mat-form-field>
+                <mat-select [(ngModel)]="selectedFruit" name="select2" placeholder="Search fruit">
+                  <mat-option>
+                    <ngx-mat-select-search 
+                      [formControl]="searchControl"   
+                      [placeholderLabel]="searchPlaceholderLabelSelect"            
+                      [noEntriesFoundLabel]="searchNoEntriesFoundLabel" >
+                    </ngx-mat-select-search>
+                  </mat-option>
+                  <mat-option *ngFor="let fruit of filteredFruits" [value]="fruit" name="fruit">
+                    {{ fruit }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+  
+          </div>
+        </form>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

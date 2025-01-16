@@ -1,1 +1,25 @@
-<p>sidebar works!</p>
+<mat-drawer-container class="example-container">
+    <mat-drawer #drawer mode="side">
+      <ul>
+        <li class="grid-item">    
+            <a [routerLink]="['/dropdown-component']">Select</a>
+        </li>
+        <li class="grid-item">    
+            <a [routerLink]="['/range-slider-component']">Range Slider</a>
+        </li>
+        <li class="grid-item">    
+            <a [routerLink]="['/snackbar-component']">Snackbar</a>
+        </li>
+        <li class="grid-item">    
+            <a [routerLink]="['/file-upload-component']">File Upload</a>
+        </li>
+        <li class="grid-item">    
+            <a [routerLink]="['/datepicker-component']">Date Picker</a>
+        </li>
+    </ul>
+    </mat-drawer>
+    <mat-drawer-content>
+      <button mat-raised-button (click)="drawer.toggle()">Toggle drawer</button>
+    </mat-drawer-content>
+  </mat-drawer-container>
+  

@@ -6,7 +6,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatChipsModule, MatChipInputEvent } from '@angular/material/chips';
+import { MatChipsModule} from '@angular/material/chips';
 import { MatIcon } from '@angular/material/icon';
 
 @Component({

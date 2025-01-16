@@ -1,0 +1,35 @@
+<h2 class="m-20">Multi selection with search</h2>
+<mat-card appearance="outlined" class="basic-card m-20">
+  <mat-card-content>
+    <div class="single-type-block select-content-wrapper">
+      <div class="component-wrapper">
+        <form class="component-item-form">
+          <div class="form-item-wrapper">
+            <!-- multiple select with search -->
+            <div class="form-item">
+              <mat-label>Multiple selection with search using 3rd party library</mat-label>
+              <mat-form-field>
+                <mat-select [(ngModel)]="selectedItems" multiple name="select6" placeholder="Select item">                           
+                  <mat-option>
+                    <ngx-mat-select-search 
+                      [formControl]="searchControlMultiple"
+                      [placeholderLabel]="searchPlaceholderLabel"
+                      [noEntriesFoundLabel]="searchNoEntriesFoundLabel" 
+                      [showToggleAllCheckbox]="true"
+                      [toggleAllCheckboxIndeterminate]="isIndeterminate"
+                      (toggleAll)="toggleSelectAll($event)">
+                    </ngx-mat-select-search>
+                  </mat-option>
+                  <!-- Options List -->
+                  <mat-option *ngFor="let item of filteredItems" [value]="item" name="item" (click)="onItemToggle(item)">
+                    {{ item }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

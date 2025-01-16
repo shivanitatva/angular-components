@@ -1,5 +1,29 @@
 <h2 class="m-20">Different selection option</h2>
-<mat-card appearance="outlined" class="basic-card m-20">
+<ul class="component-grid">
+  <li class="grid-item">    
+      <a [routerLink]="['/dropdown-component/single-select']">Single select</a>
+  </li>
+  <li class="grid-item">    
+      <a [routerLink]="['/dropdown-component/single-select-with-search']">Single select with search</a>
+  </li>
+  <li class="grid-item">    
+      <a [routerLink]="['/dropdown-component/multi-select']">Mutliselect</a>
+  </li>
+  <li class="grid-item">    
+      <a [routerLink]="['/dropdown-component/multi-select-with-search']">Multiselect with search</a>
+  </li>
+  <li class="grid-item">    
+      <a [routerLink]="['/dropdown-component/color-image-icon-selection']">Color/Image/Icon selection</a>
+  </li>
+  <li class="grid-item">    
+      <a [routerLink]="['/dropdown-component/autocomplete']">Auto Complete</a>
+  </li>
+  <li class="grid-item">    
+      <a [routerLink]="['/dropdown-component/autocomplete-multiselection']">Auto Complete with multiselection</a>
+  </li>
+</ul>
+
+<mat-card appearance="outlined" class="basic-card m-20" style="display: none;">
   <mat-card-content>
     <div class="single-type-block select-content-wrapper">
       <div class="component-wrapper">
