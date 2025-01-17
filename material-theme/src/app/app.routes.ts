@@ -13,6 +13,7 @@ import { MultiselectSearchComponent } from './pages/select-component/multiselect
 import { AutocompleteMultiSelectionComponent } from './pages/select-component/autocomplete-multi-selection/autocomplete-multi-selection.component';
 import { AutocompleteComponent } from './pages/select-component/autocomplete/autocomplete.component';
 import { ColorImageIconSelectionComponent } from './pages/select-component/color-image-icon-selection/color-image-icon-selection.component';
+import { MultiselectWithChipComponent } from './pages/select-component/multiselect-with-chip/multiselect-with-chip.component';
 
 export const routes: Routes = [
     {
@@ -49,6 +50,11 @@ export const routes: Routes = [
         path: 'dropdown-component/multi-select-with-search',
         pathMatch: "full",
         component: MultiselectSearchComponent
+    },
+    {
+        path: 'dropdown-component/multi-select-with-chip',
+        pathMatch: "full",
+        component: MultiselectWithChipComponent
     },
     {
         path: 'dropdown-component/color-image-icon-selection',
