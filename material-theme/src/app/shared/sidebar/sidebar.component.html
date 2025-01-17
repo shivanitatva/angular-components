@@ -1,4 +1,4 @@
-<mat-drawer-container class="example-container">
+<!-- <mat-drawer-container class="example-container">
     <mat-drawer #drawer mode="side">
       <ul>
         <li class="grid-item">    
@@ -21,5 +21,40 @@
     <mat-drawer-content>
       <button mat-raised-button (click)="drawer.toggle()">Toggle drawer</button>
     </mat-drawer-content>
-  </mat-drawer-container>
+  </mat-drawer-container> -->
+
+  <div class="sidebar">
+    <ul class="nav-list-wrapper">
+        <li class="has-sub-menu nav-list">    
+            <mat-accordion>
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title> Select </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <ul class="sub-nav-list">
+                    <li><a [routerLink]="['/dropdown-component/single-select']" routerLinkActive="active-link">Single Select</a></li>
+                    <li><a [routerLink]="['/dropdown-component/single-select-with-search']" routerLinkActive="active-link">Single Select with Search </a></li>
+                    <li><a [routerLink]="['/dropdown-component/multi-select']" routerLinkActive="active-link">Multi Select</a></li>
+                    <li><a [routerLink]="['/dropdown-component/multi-select-with-search']" routerLinkActive="active-link">Multi Select with Search</a></li>
+                    <li><a [routerLink]="['/dropdown-component/color-image-icon-selection']" routerLinkActive="active-link">Color Image Icon Selection</a></li>
+                    <li><a [routerLink]="['/dropdown-component/autocomplete']" routerLinkActive="active-link">Auto Complete</a></li>
+                    <li><a [routerLink]="['/dropdown-component/autocomplete-multiselection']" routerLinkActive="active-link">Auto Complete with Multi Select</a></li>
+                  </ul>
+                </mat-expansion-panel>              
+              </mat-accordion>
+        </li>
+        <li class="nav-list">    
+            <a [routerLink]="['/range-slider-component']" routerLinkActive="active-link">Range Slider</a>
+        </li>
+        <li class="nav-list">    
+            <a [routerLink]="['/snackbar-component']" routerLinkActive="active-link">Snackbar</a>
+        </li>
+        <li class="nav-list">    
+            <a [routerLink]="['/file-upload-component']" routerLinkActive="active-link">File Upload</a>
+        </li>
+        <li class="nav-list">    
+            <a [routerLink]="['/datepicker-component']" routerLinkActive="active-link">Date Picker</a>
+        </li>
+    </ul>
+  </div>
   
